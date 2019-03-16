@@ -36,7 +36,7 @@ if __name__ == "__main__":
     ctrl.inPlaceTurnRight(rb, 25)
 
     speed = 15 # ne pas toucher à cette vitesse elle joue sur le temps de parcourt des murs en v !
-    wall_time = 40
+    wall_time = 30
     ctrl.followTheRightWall(rb,0.45,speed,wall_time)
     ctrl.inPlaceTurnLeft(rb,20)
     ctrl.followTheRightWall(rb,0.45,speed,5)
