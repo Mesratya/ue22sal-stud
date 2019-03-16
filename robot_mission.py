@@ -13,7 +13,7 @@ if __name__ == "__main__":
     ctrl = robot_control.RobotControl() # create a robot controller
 
     # put here your code to solve the challenge
-    speed = 40
+    speed = 60 # 40 ça marcjait nickel
     dist = 0.5
     ctrl.goLineOdometer(rb, dist, speed)
     angle = 90.0
@@ -29,30 +29,37 @@ if __name__ == "__main__":
     ctrl.inPlaceTurnRight(rb, angle)
     ctrl.followTheLeftWall(rb,0.5,speed)
 
-    print("J'affronte le premier mur en V !")
+    speed = 40
 
     ctrl.inPlaceTurnRight(rb, angle)
     ctrl.goLineOdometer(rb,0.55, speed)
     ctrl.inPlaceTurnRight(rb, 25)
 
-    speed = 20
+    speed = 15 # ne pas toucher à cette vitesse elle joue sur le temps de parcourt des murs en v !
 
-    ctrl.followTheRightWall(rb,0.6,speed)
-    print("fin du mur en V n°1, je tourne")
+    ctrl.followTheRightWall(rb,0.45,speed,40)
+    ctrl.inPlaceTurnLeft(rb,20)
+    ctrl.followTheRightWall(rb,0.45,speed,5)
+    ctrl.inPlaceTurnLeft(rb,15)
+    ctrl.followTheRightWall(rb,0.45,speed)
+
+
     ctrl.goLineOdometer(rb,0.1,speed)
-    print("suivit à gauche")
     ctrl.followTheLeftWall(rb,0.5,speed)
-    print("fin du suivit à gauche : rotation !")
-    ctrl.inPlaceTurnRight(rb,70)
-    print("J'affronte le 2nd mur en V ! , j'avance un peu")
-    ctrl.goLineOdometer(rb,0.5,speed)
-    print("Fin des préparatifs je suit ce fameux mur en V")
-    ctrl.followTheRightWall(rb,0.6,speed)
-    print("Fin du suivit, légère rotation vers la droite enclanchée")
-    ctrl.inPlaceTurnRight(rb,10)
-    print("Phase Finale suivit du mur gauche !")
+
+    ctrl.inPlaceTurnRight(rb,80)
+    ctrl.goLineOdometer(rb,0.7,speed)
+    print("je suit le 2nd mur")
+    ctrl.inPlaceTurnRight(rb,20)
+
+    ctrl.followTheRightWall(rb, 0.45, speed, 40)
+    ctrl.inPlaceTurnLeft(rb, 20)
+    ctrl.followTheRightWall(rb, 0.45, speed, 5)
+    ctrl.inPlaceTurnLeft(rb, 15)
+    ctrl.followTheRightWall(rb, 0.45, speed)
+    
+
     ctrl.followTheLeftWall(rb,0.5,speed)
-    print("Fin !!!")
 
 
 
