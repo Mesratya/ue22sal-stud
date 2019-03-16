@@ -36,8 +36,8 @@ if __name__ == "__main__":
     ctrl.inPlaceTurnRight(rb, 25)
 
     speed = 15 # ne pas toucher à cette vitesse elle joue sur le temps de parcourt des murs en v !
-
-    ctrl.followTheRightWall(rb,0.45,speed,40)
+    wall_time = 40
+    ctrl.followTheRightWall(rb,0.45,speed,wall_time)
     ctrl.inPlaceTurnLeft(rb,20)
     ctrl.followTheRightWall(rb,0.45,speed,5)
     ctrl.inPlaceTurnLeft(rb,15)
@@ -52,14 +52,19 @@ if __name__ == "__main__":
     print("je suit le 2nd mur")
     ctrl.inPlaceTurnRight(rb,20)
 
-    ctrl.followTheRightWall(rb, 0.45, speed, 40)
+    ctrl.followTheRightWall(rb, 0.45, speed, wall_time)
     ctrl.inPlaceTurnLeft(rb, 20)
     ctrl.followTheRightWall(rb, 0.45, speed, 5)
     ctrl.inPlaceTurnLeft(rb, 15)
     ctrl.followTheRightWall(rb, 0.45, speed)
-    
+
 
     ctrl.followTheLeftWall(rb,0.5,speed)
+    ctrl.goLineOdometer(rb,0.2,speed)
+    ctrl.inPlaceTurnRight(rb,90)
+    ctrl.goLineOdometer(rb,0.2,speed)
+
+    # ajouter du piétinement pour être sur de scorer le checkpoint final !
 
 
 
