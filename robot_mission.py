@@ -48,13 +48,13 @@ if __name__ == "__main__":
     ctrl.followTheLeftWall(rb,0.5,20)
 
     ctrl.inPlaceTurnRight(rb,90)
-    ctrl.followTheLeftWall(rb,0.5,20,max_time=13)
-    print("je suit le 2nd mur")
+    ctrl.followTheLeftWall(rb,0.5,20,max_time=15)
+
     ctrl.inPlaceTurnRight(rb,18)
 
-    wall_time = 24
+    wall_time = 26
 
-    ctrl.followTheRightWall(rb, 0.5, speed, wall_time)
+    ctrl.followTheRightWall(rb, 0.5, speed,wall_time)
     ctrl.inPlaceTurnLeft(rb, 20)
     ctrl.followTheRightWall(rb, 0.5, speed, 4)
     ctrl.inPlaceTurnLeft(rb, 18)
@@ -62,12 +62,10 @@ if __name__ == "__main__":
 
 
     ctrl.followTheLeftWall(rb,0.5,15,0.5)
-    print("fin du follow last left wall")
 
 
-    ctrl.goLineOdometer(rb,0.2,speed)
-    ctrl.inPlaceTurnRight(rb,90)
-    ctrl.goLineOdometer(rb,0.2,speed)
+
+    
 
     # ajouter du piétinement pour être sur de scorer le checkpoint final !
 
