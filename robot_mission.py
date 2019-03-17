@@ -65,7 +65,6 @@ if __name__ == "__main__":
 
 
 
-    
 
     # ajouter du piétinement pour être sur de scorer le checkpoint final !
 
