@@ -40,7 +40,7 @@ if __name__ == "__main__":
     wall_time = 27
     ctrl.followTheRightWall(rb,0.5,speed,wall_time)
     ctrl.inPlaceTurnLeft(rb,20)
-    ctrl.followTheRightWall(rb,0.5,speed,4)
+    ctrl.followTheRightWall(rb,0.5,speed,5.5)
     ctrl.inPlaceTurnLeft(rb,18)
     ctrl.followTheRightWall(rb,0.5,speed)
 
@@ -57,7 +57,7 @@ if __name__ == "__main__":
 
     ctrl.followTheRightWall(rb, 0.5, speed,wall_time)
     ctrl.inPlaceTurnLeft(rb, 20)
-    ctrl.followTheRightWall(rb, 0.5, speed, 4)
+    ctrl.followTheRightWall(rb, 0.5, speed, 5.5)
     ctrl.inPlaceTurnLeft(rb, 18)
     ctrl.followTheRightWall(rb, 0.5, speed)
 
