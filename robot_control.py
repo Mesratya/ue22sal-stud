@@ -73,7 +73,7 @@ class RobotControl:
 
 
 
-    def inPlaceTurnLeft(self, rb, ang):  # ang in degrees  
+    def inPlaceTurnLeft(self, rb, ang):  # ang in degrees
         setPoint = (self.nTicksPerRevol / 360) * (ang * self.distBetweenWheels / self.wheelDiameter)
         loopIterationTime = 0.05
         odoLeft, odoRight = rb.get_odometers()
@@ -118,7 +118,7 @@ class RobotControl:
             if deltaTime > 0:
                 time.sleep(deltaTime)
 
-    def followTheLeftWall(self,rb,dist,speed):
+    def followTheLeftWall(self,rb,dist,speed,dist_Obstacle = 0.5,max_time = 120):
         setPoint = dist
         nominalSpeed = speed
         derivOk = False
@@ -131,8 +131,9 @@ class RobotControl:
         kp = 10 # 30 et 50 /10 et 1000 / 4 et 4.4
         kd = 1000
         deltaSpeedMax = 10
-        distObstacle = 0.5
+        distObstacle = dist_Obstacle
         loopIterationTime = 0.05
+        global_t0 = time.time()
         while True:
             t0 = time.time()
 
@@ -160,7 +161,9 @@ class RobotControl:
             distFront = fltFront.iir_filter(distFront)
             #print(distFront_raw,distFront,distObstacle)
             ControlError_Front = distObstacle - distFront
-            if distFront_raw != 0.0 and ControlError_Front > 0 :
+            global_time = time.time() - global_t0
+            print(global_time)
+            if (distFront_raw != 0.0 and ControlError_Front > 0) or (global_time > max_time)  :
                 rb.stop()
                 break
 
@@ -181,8 +184,8 @@ class RobotControl:
         fltRight = sonar_filter.SonarFilter()
         fltRight.set_iir_a(0.7)
         fltRight.reset_iir()
-        kp = 4.4
-        kd = 4
+        kp = 10
+        kd = 1000
         deltaSpeedMax = 10
         distObstacle = 0.5
         loopIterationTime = 0.05

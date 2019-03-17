@@ -27,39 +27,42 @@ if __name__ == "__main__":
     ctrl.inPlaceTurnRight(rb, angle)
     ctrl.followTheLeftWall(rb,0.5,speed)
     ctrl.inPlaceTurnRight(rb, angle)
-    ctrl.followTheLeftWall(rb,0.5,speed)
+    ctrl.followTheLeftWall(rb,0.5,40)
 
     speed = 40
 
     ctrl.inPlaceTurnRight(rb, angle)
     ctrl.goLineOdometer(rb,0.55, speed)
-    ctrl.inPlaceTurnRight(rb, 25)
+    ctrl.inPlaceTurnRight(rb, 22)
 
-    speed = 15 # ne pas toucher à cette vitesse elle joue sur le temps de parcourt des murs en v !
-    wall_time = 30
-    ctrl.followTheRightWall(rb,0.45,speed,wall_time)
+    speed = 20 # ne pas toucher à cette vitesse elle joue sur le temps de parcourt des murs en v !
+    wall_time = 27
+    ctrl.followTheRightWall(rb,0.5,speed,wall_time)
     ctrl.inPlaceTurnLeft(rb,20)
-    ctrl.followTheRightWall(rb,0.45,speed,5)
-    ctrl.inPlaceTurnLeft(rb,15)
-    ctrl.followTheRightWall(rb,0.45,speed)
+    ctrl.followTheRightWall(rb,0.5,speed,4)
+    ctrl.inPlaceTurnLeft(rb,18)
+    ctrl.followTheRightWall(rb,0.5,speed)
 
 
-    ctrl.goLineOdometer(rb,0.1,speed)
-    ctrl.followTheLeftWall(rb,0.5,speed)
+    #ctrl.goLineOdometer(rb,0.1,speed)
+    ctrl.followTheLeftWall(rb,0.5,20)
 
-    ctrl.inPlaceTurnRight(rb,80)
-    ctrl.goLineOdometer(rb,0.7,speed)
+    ctrl.inPlaceTurnRight(rb,90)
+    ctrl.followTheLeftWall(rb,0.5,20,max_time=16)
     print("je suit le 2nd mur")
-    ctrl.inPlaceTurnRight(rb,20)
+    ctrl.inPlaceTurnRight(rb,18)
 
-    ctrl.followTheRightWall(rb, 0.45, speed, wall_time)
+    ctrl.followTheRightWall(rb, 0.5, speed, wall_time)
     ctrl.inPlaceTurnLeft(rb, 20)
-    ctrl.followTheRightWall(rb, 0.45, speed, 5)
-    ctrl.inPlaceTurnLeft(rb, 15)
-    ctrl.followTheRightWall(rb, 0.45, speed)
+    ctrl.followTheRightWall(rb, 0.5, speed, 4)
+    ctrl.inPlaceTurnLeft(rb, 18)
+    ctrl.followTheRightWall(rb, 0.5, speed)
 
 
-    ctrl.followTheLeftWall(rb,0.5,speed)
+    ctrl.followTheLeftWall(rb,0.5,15,0.5)
+    print("fin du follow last left wall")
+
+
     ctrl.goLineOdometer(rb,0.2,speed)
     ctrl.inPlaceTurnRight(rb,90)
     ctrl.goLineOdometer(rb,0.2,speed)
