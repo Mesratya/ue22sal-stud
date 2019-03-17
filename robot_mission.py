@@ -23,7 +23,8 @@ if __name__ == "__main__":
     angle = 90.0
     ctrl.inPlaceTurnLeft(rb, angle)
     dist = 1.5
-    ctrl.goLineOdometer(rb, dist, speed)
+    ctrl.goLineOdometer(rb, 0.75, speed)
+    ctrl.followTheLeftWall(rb,0.5,speed)
     ctrl.inPlaceTurnRight(rb, angle)
     ctrl.followTheLeftWall(rb,0.5,speed)
     ctrl.inPlaceTurnRight(rb, angle)
