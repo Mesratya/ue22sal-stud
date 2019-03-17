@@ -48,9 +48,11 @@ if __name__ == "__main__":
     ctrl.followTheLeftWall(rb,0.5,20)
 
     ctrl.inPlaceTurnRight(rb,90)
-    ctrl.followTheLeftWall(rb,0.5,20,max_time=16)
+    ctrl.followTheLeftWall(rb,0.5,20,max_time=13)
     print("je suit le 2nd mur")
     ctrl.inPlaceTurnRight(rb,18)
+
+    wall_time = 24
 
     ctrl.followTheRightWall(rb, 0.5, speed, wall_time)
     ctrl.inPlaceTurnLeft(rb, 20)
